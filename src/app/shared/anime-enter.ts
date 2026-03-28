@@ -13,7 +13,6 @@ export class AnimeEnter implements AfterViewInit {
   readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   readonly elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
-  readonly cdRef = inject(ChangeDetectorRef);
   readonly animeEnter = input<AnimationParams>();
 
   ngAfterViewInit(): void {
@@ -21,7 +20,6 @@ export class AnimeEnter implements AfterViewInit {
       const params = this.animeEnter();
       if (params && this.elementRef.nativeElement) {
         animate(this.elementRef.nativeElement, params);
-        this.cdRef.detectChanges();
       }
     }
   }

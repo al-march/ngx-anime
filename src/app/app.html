@@ -214,6 +214,16 @@
             opacity: [0, 1],
             rotate: '1turn',
             height: [0, ref.scrollHeight],
+            ease: 'outBack(1.7)',
+            duration: 300,
+            onComplete: onComplete,
+          }"
+          [animeLeave]="{
+            height: 0,
+            opacity: 0,
+            filter: 'blur(5px)',
+            duration: 300,
+            onComplete: onComplete,
           }"
           style="display: flex; width: 200px; justify-content: center; overflow: hidden"
         >
@@ -264,8 +274,15 @@
           </svg>
         </div>
       }
-      <h1>Hello, Friend</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <h1>Hello, Friend and not</h1>
+      @if (show()) {
+        <p
+          [animeEnter]="{ opacity: [0, 1], duration: 600 }"
+          [animeLeave]="{ opacity: 0, filter: 'blur(5px)', duration: 250 }"
+        >
+          Congratulations! Your app is running. 🎉
+        </p>
+      }
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -361,7 +378,21 @@
       </div>
     </div>
   </div>
+
+  <button (click)="dialog.set(!dialog())">show dialog</button>
 </main>
+
+@if (dialog()) {
+  <div
+    [animeEnter]="{ scale: [0, 1], ease: 'outBack(1.7)', x: [-140, 0], duration: 300 }"
+    [animeLeave]="{ x: -1000, duration: 550 }"
+    class="dialog"
+  >
+    <div>
+      <h2>I am dialog epta</h2>
+    </div>
+  </div>
+}
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
