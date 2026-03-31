@@ -1,0 +1,52 @@
+.pre {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pre-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0.4;
+  color: var(--color-base-content);
+  background: var(--color-base-300);
+  pointer-events: none;
+  user-select: none;
+  padding-left: calc(var(--spacing) * 2);
+  padding-right: calc(var(--spacing) * 2);
+}
+
+.pre-lines__item {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--spacing) * 0.5);
+  line-height: 1;
+}
+
+.pre-code {
+  width: 100%;
+  overflow-x: auto;
+  padding-left: calc(var(--spacing) * 2);
+}
+
+.pre-code .line {
+  position: relative;
+  display: inline-block;
+}
+
+.pre-code pre::before {
+  content: none;
+  margin: 0;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

@@ -1,0 +1,19 @@
+<div class="relative">
+  <div class="mockup-code bg-base-300" [class.!border-none]="clean()">
+    <app-code
+      [code]="code()"
+      [lang]="lang()"
+    />
+  </div>
+
+  <div class="absolute right-0 top-2 pr-4">
+    <button
+      (click)="copy()"
+      class="btn btn-xs"
+      [class.btn-success]="copyStatus().status === statuses.SUCCESS"
+      [class.btn-error]="copyStatus().status === statuses.ERROR"
+    >
+      {{ copyStatus().text }}
+    </button>
+  </div>
+</div>

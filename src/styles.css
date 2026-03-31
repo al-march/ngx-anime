@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'tailwindcss';
+
 @plugin 'daisyui' {
   themes: light, dark;
+}
+
+.mockup-code pre:before {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.mockup-code:before {
+  box-shadow: 1.4em 0 var(--color-error), 2.8em 0 var(--color-base-content), 4.2em 0 var(--color-success);
 }
