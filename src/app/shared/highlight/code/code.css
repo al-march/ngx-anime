@@ -9,7 +9,7 @@
   justify-content: space-between;
   opacity: 0.4;
   color: var(--color-base-content);
-  background: var(--color-base-300);
+  background: var(--color-base-200);
   pointer-events: none;
   user-select: none;
   padding-left: calc(var(--spacing) * 2);

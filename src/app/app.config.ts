@@ -3,7 +3,6 @@ import {
   inject,
   provideAppInitializer,
   provideBrowserGlobalErrorListeners,
-  provideEnvironmentInitializer,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -17,10 +16,8 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideEnvironmentInitializer(() => {
-      inject(DARK_MODE);
-    }),
     provideAppInitializer(async () => {
+      inject(DARK_MODE);
       await inject(Highlighter).init({
         langs: ['ts', 'angular-html', 'scss', 'bash'],
         themes: ['one-dark-pro', 'one-light'],

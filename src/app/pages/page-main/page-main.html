@@ -1,22 +1,10 @@
 <app-navbar />
 
-<main class="container m-auto p-10">
-  <button class="btn" (click)="show.set(!show())">Toggle</button>
-  <div class="py-4"></div>
-  <div class="h-[100px] flex flex-col gap-2">
-    @if (show()) {
-      <div
-        [animeEnter]="{
-          x: '120px',
-          rotate: '1turn',
-          scale: [0, 1],
-          ease: 'outBack(1.7)',
-        }"
-        [animeLeave]="{ x: '0px', rotate: '-1turn', scale: 0 }"
-        class="bg-primary w-[40px] h-[40px] rounded-lg shrink-0"
-      ></div>
-    }
-  </div>
-
-  <app-highlight lang="angular-html" [code]="code" />
+<main class="container m-auto p-2">
+  <app-code-example
+    [html]="example.HTML | async"
+    [ts]="example.TS | async"
+  >
+    <ng-container *ngComponentOutlet="example.component | async" />
+  </app-code-example>
 </main>
