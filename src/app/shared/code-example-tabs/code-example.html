@@ -1,0 +1,65 @@
+<div class="my-4 rounded-lg border border-neutral-content/50">
+  <div
+    class="w-full min-h-70 flex items-center justify-center bg-base-100 rounded-b"
+  >
+    <ng-content />
+  </div>
+
+  <div class="divider m-0 h-0"></div>
+
+  <footer class="p-2 flex items-center justify-center">
+    <button
+      class="btn btn-sm btn-ghost"
+      [class.btn-active]="showCode()"
+      (click)="showCode.set(!showCode())"
+    >
+      Show code
+    </button>
+  </footer>
+
+  @if (showCode()) {
+    <div
+      #tabContent
+      class="overflow-hidden"
+      [animeEnter]="{
+        height: [0, codeHeight()],
+        ease: 'outExpo',
+        duration: 200,
+        onComplete: animeComplete
+      }"
+      [animeLeave]="{
+        height: 0,
+        ease: 'outExpo',
+        duration: 200,
+      }"
+    >
+      <div class="w-full overflow-hidden overflow-x-auto">
+        <demo-tabs class="bg-base-100" [(active)]="activeTab">
+          @for (tab of tabs(); track tab) {
+            <button demoTab [value]="tab">{{ tabTypeToLabel[tab] }}</button>
+          }
+        </demo-tabs>
+      </div>
+
+      <div class="content">
+        @switch (activeTab()) {
+          @case (tabType.HTML) {
+            <div>
+              <app-highlight clean lang="angular-html" [code]="html()" />
+            </div>
+          }
+          @case (tabType.TS) {
+            <div>
+              <app-highlight clean lang="typescript" [code]="ts()" />
+            </div>
+          }
+          @case (tabType.SCSS) {
+            <div>
+              <app-highlight clean lang="scss" [code]="scss()" />
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+</div>

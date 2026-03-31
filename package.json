@@ -24,7 +24,7 @@
     "@ng-web-apis/common": "^5.2.0",
     "animejs": "^4.3.6",
     "express": "^5.1.0",
-    "ngx-animejs": "^0.0.1",
+    "ngx-animejs": "^0.0.2",
     "rxjs": "~7.8.0",
     "shiki": "^4.0.2",
     "tailwindcss": "^4.2.2",
