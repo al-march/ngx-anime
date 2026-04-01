@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DARK_MODE } from '@/app/core/tokens/dark-mode';
+import { LucideMoon, LucideSun } from '@lucide/angular';
 
 @Component({
   selector: 'app-theme-toggler',
-  imports: [FormsModule],
+  imports: [FormsModule, LucideSun, LucideMoon],
   templateUrl: './theme-toggler.html',
   styleUrl: './theme-toggler.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
