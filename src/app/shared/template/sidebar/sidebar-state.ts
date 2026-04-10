@@ -1,4 +1,11 @@
-import { effect, inject, InjectionToken, PLATFORM_ID, signal, type WritableSignal } from '@angular/core';
+import {
+  effect,
+  inject,
+  InjectionToken,
+  PLATFORM_ID,
+  signal,
+  type WritableSignal,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { WA_LOCAL_STORAGE } from '@ng-web-apis/common';
 
