@@ -1,0 +1,7 @@
+<app-code-example
+  ngSkipHydration
+  [html]="animeLayout.HTML | async"
+  [ts]="animeLayout.TS | async"
+>
+  <ng-container *ngComponentOutlet="animeLayout.component | async" />
+</app-code-example>

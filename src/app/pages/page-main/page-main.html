@@ -1,19 +1,6 @@
-<app-navbar class="sticky top-0 z-50" />
-
-<main class="container m-auto p-2">
-  <app-code-example
-    ngSkipHydration
-    [html]="animeLogo.HTML | async"
-    [ts]="animeLogo.TS | async"
-  >
-    <ng-container *ngComponentOutlet="animeLogo.component | async" />
-  </app-code-example>
-
-  <app-code-example
-    ngSkipHydration
-    [html]="animeLayout.HTML | async"
-    [ts]="animeLayout.TS | async"
-  >
-    <ng-container *ngComponentOutlet="animeLayout.component | async" />
-  </app-code-example>
-</main>
+<app-sidebar>
+  <app-navbar class="sticky top-0 z-50" />
+  <main class="container m-auto p-2">
+    <router-outlet />
+  </main>
+</app-sidebar>
