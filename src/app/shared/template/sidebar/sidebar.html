@@ -3,7 +3,6 @@
   <div class="drawer-content">
     <ng-content />
   </div>
-  <!--  is-drawer-close:hidden-->
   <div class="drawer-side z-70">
     <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay" (click)="expand.set(!expand())"></label>
     <div class="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-64 is-drawer-open:w-64">
@@ -12,7 +11,6 @@
           <app-angular-logo />
         </a>
         <div class="divider my-1"></div>
-
         <ul class="menu menu-xs bg-base-200 rounded-box max-w-xs w-full font-semibold">
           <li>
             <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="menu-active">
@@ -27,14 +25,11 @@
             </a>
           </li>
         </ul>
-
       </div>
       <div class="flex-1"></div>
       <a class="btn btn-block btn-ghost lg:hidden" (click)="expand.set(false)">
         <svg lucidePanelLeftClose></svg>
       </a>
-
-
     </div>
   </div>
 </div>
